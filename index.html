@@ -3,9 +3,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erika Loc' Final Project</title>
+    <title>Erika Loc's Final Project</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <header class="header">
+        <h1>Game Of Thrones Stats</h1>
+    </header>
+    <div class="container">
+        <div class="left_section box">
+            <h2>Instructions: </h2>
+            <h4>[INSERT INSTRUCTIONS]</h4>
+            <h2>Examples: </h2>
+            <h4>[INSERT SAMPLE SCREENSHOTS]</h4>
+        </div>
+        <div class="right_section box">
+            <form action="https://www.anapioficeandfire.com/api/characters.json" class="main_form">
+                <button type="button" id="data_load">Load GoT Data</button>
+                <button type="button" id="data_clear">Clear GoT Data</button>
+                <div>
+                    <label for="westerosian"Filter By Character></label>
+                    <input type="text" id="westerosian" name="westerosian"/>
+                </div>
+                    <button type="button" id="search">Search</button>
+                <div>
+                    <h2>[INSERT FILTERS STATS FROM SEARCH]</h2>
+                </div>
+            </form>
+            
+
+        </div>
+        <script src="./script.js"></script>
+    </div>
 </body>
 </html>
