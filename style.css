@@ -54,7 +54,7 @@
   
   .wrapper {
     min-height: 100vh;
-    display: flex;
+    display: flex column;
     flex-direction: column;
     margin: 0;
     flex: 1 2 auto;
@@ -119,7 +119,15 @@
     flex-flow: column;
   }
   
-  
+  .footer {
+    flex-shrink: 0;
+    padding: 1rem;
+    background-color: #E0E1DD;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: 2px;
+  }
+
   .subtitle {
     color: #0D1B2A;
     margin: 0px;
@@ -176,6 +184,7 @@
     flex-direction: row;
     justify-content: space-between;
   }
+
   
   .lds-ellipsis {
       display: inline-block;
