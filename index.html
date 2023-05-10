@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <!-- <script src="https://code.highcharts.com/highcharts.js"></script> -->
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 <body>
     <header class="header">
@@ -26,8 +28,10 @@
                 </div>
                     <button type="button" id="filter" id="filter">Search Data</button>
                     <button type="button" id="generate">Generate List</button>
-                <div>
-                    <h2>[INSERT FILTERS STATS FROM SEARCH]</h2>
+                <div class="pie">
+                    <h2>Percentages of Westerosian By Gender</h2>
+            
+                                        
                 </div>
             </form>
         </div>
@@ -35,9 +39,9 @@
             <h2>Character List</h2>
             <ul id="alias_list"></ul>
             <!-- <figure class="highcharts-figure"></figure> -->
-            <div class="lds-ellipsis" id='data_load_animation'><div></div><div></div><div></div><div></div></div>
-            </div>
+            <!-- <div class="lds-ellipsis" id='data_load_animation'><div></div><div></div><div></div><div></div></div> -->
         </div>
+    </div>
         <footer class="footer">
             <!-- change page button -->
             <a href="about.html">

@@ -34,8 +34,8 @@ function injectHTML(list) {
 function filterList(list, query) {
     return list.filter((item) => {
         const aliases = Array.isArray(item.aliases) ? item.aliases.join(', ') : item.aliases;
-        const lowerCaseName = (aliases  ||"").toLowerCase();
-        const lowerCaseQuery = (query||  "").toLowerCase();
+        const lowerCaseName = (aliases || "").toLowerCase();
+        const lowerCaseQuery = (query ||  "").toLowerCase();
         return lowerCaseName.includes(lowerCaseQuery);
     });
 }
@@ -67,14 +67,17 @@ function cutAliasList(list) {
     return newArray;
 }
 
+
+
 async function mainEvent() {
     const mainForm = document.querySelector('.main_form');
     const filterButton = document.querySelector('#filter');
     const loadDataButton = document.querySelector('#data_load');
     const generateListButton = document.querySelector('#generate');
+    const textField = document.querySelector('#westerosian');
 
     const loadAnimation = document.querySelector('#data_load_animation');
-    loadAnimation.style.diplay = 'none';
+    // loadAnimation.style.diplay = 'none';
     
     // const textField = document.querySelector('#westerosian')
 
@@ -111,6 +114,14 @@ async function mainEvent() {
         injectHTML(aliasList);
     })
 
+    textField.addEventListener('input', (event) => {
+        console.log('input', event.target.value);
+        const newList = filterList(currentList, event.target.value);
+        console.log(newList);
+        injectHTML(newList);
+    })
 }
+
+
 
 document.addEventListener('DOMContentLoaded', async () => mainEvent());
