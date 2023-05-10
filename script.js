@@ -14,22 +14,57 @@ function injectHTML(list) {
     })
 }
 
+// function filterList(list, query) {
+//     return list.filter((item) => {
+//         const lowerCaseName = item.aliases.toLowerCase();
+//         const lowerCaseQuery = query.toLowerCase();
+//         return lowerCaseName.includes(lowerCaseQuery)
+
+//     })
+// }
+
+// function filterList(list, query) {
+//     return list.filter((item) => {
+//         const lowerCaseName = (item.aliases  ||'').toLowerCase();
+//         const lowerCaseQuery = (query||  '').toLowerCase();
+//         return lowerCaseName.includes(lowerCaseQuery);
+//     });
+// }
+
 function filterList(list, query) {
     return list.filter((item) => {
-        const lowerCaseName = item.aliases.toLowerCase();
-        const lowerCaseQuery = query.toLowerCase();
-        return lowerCaseName.includes(lowerCaseQuery)
-
-    })
+        const aliases = Array.isArray(item.aliases) ? item.aliases.join(', ') : item.aliases;
+        const lowerCaseName = (aliases  ||"").toLowerCase();
+        const lowerCaseQuery = (query||  "").toLowerCase();
+        return lowerCaseName.includes(lowerCaseQuery);
+    });
 }
+
+// function cutAliasList(list) {
+//     console.log('fired cut list');
+//     const range = [...Array(15).keys()];
+//     const newArray = range.map((item) => {
+//         const index = getRandomIntInclusive(0, list.length -1);
+//         return list[index]
+//     })
+//     return newArray;
+// }
 
 function cutAliasList(list) {
     console.log('fired cut list');
-    const range = [...Array(5).keys()];
-    const newArray = range.map((item) => {
-        const index = getRandomIntInclusive(0, list.length -1);
-        return list[index]
-    })
+    let cloneList = [...list]; // Clone list to avoid mutation
+    const newArray = [];
+
+    for (let i = 0; i < 15; i++) { // We want 15 unique items
+        if (cloneList.length === 0) {
+            break; // Break if there are not enough items
+        }
+        const index = getRandomIntInclusive(0, cloneList.length -1);
+        newArray.push(cloneList[index]); // Add the selected item to newArray
+        cloneList.splice(index, 1); // Remove selected item from cloneList
+    }
+
+    return newArray;
 }
 
 async function mainEvent() {
