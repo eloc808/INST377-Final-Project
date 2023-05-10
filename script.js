@@ -14,23 +14,6 @@ function injectHTML(list) {
     })
 }
 
-// function filterList(list, query) {
-//     return list.filter((item) => {
-//         const lowerCaseName = item.aliases.toLowerCase();
-//         const lowerCaseQuery = query.toLowerCase();
-//         return lowerCaseName.includes(lowerCaseQuery)
-
-//     })
-// }
-
-// function filterList(list, query) {
-//     return list.filter((item) => {
-//         const lowerCaseName = (item.aliases  ||'').toLowerCase();
-//         const lowerCaseQuery = (query||  '').toLowerCase();
-//         return lowerCaseName.includes(lowerCaseQuery);
-//     });
-// }
-
 function filterList(list, query) {
     return list.filter((item) => {
         const aliases = Array.isArray(item.aliases) ? item.aliases.join(', ') : item.aliases;
@@ -39,16 +22,6 @@ function filterList(list, query) {
         return lowerCaseName.includes(lowerCaseQuery);
     });
 }
-
-// function cutAliasList(list) {
-//     console.log('fired cut list');
-//     const range = [...Array(15).keys()];
-//     const newArray = range.map((item) => {
-//         const index = getRandomIntInclusive(0, list.length -1);
-//         return list[index]
-//     })
-//     return newArray;
-// }
 
 function cutAliasList(list) {
     console.log('fired cut list');
