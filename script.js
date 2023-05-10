@@ -40,6 +40,44 @@ function cutAliasList(list) {
     return newArray;
 }
 
+function countGenders(list) {
+    const genderCounts = { 'Male': 0, 'Female': 0, 'Unknown': 0 };
+    list.forEach(item => {
+        if (item.gender === 'Male') {
+            genderCounts.Male++;
+        } else if (item.gender === 'Female') {
+            genderCounts.Female++;
+        } else {
+            genderCounts.Unknown++;
+        }
+    });
+    return genderCounts;
+}
+
+function drawGenderPieChart(genderCounts) {
+    const ctx = document.getElementById('genderPieChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Male', 'Female', 'Unknown'],
+            datasets: [{
+                data: [genderCounts.Male, genderCounts.Female, genderCounts.Unknown],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(255, 206, 86, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+    });
+}
+
 
 
 async function mainEvent() {
@@ -48,6 +86,7 @@ async function mainEvent() {
     const loadDataButton = document.querySelector('#data_load');
     const generateListButton = document.querySelector('#generate');
     const textField = document.querySelector('#westerosian');
+    const generatePieButton = document.querySelector('#genPie');
 
     const loadAnimation = document.querySelector('#data_load_animation');
     // loadAnimation.style.diplay = 'none';
@@ -67,6 +106,7 @@ async function mainEvent() {
         currentList = await results.json();
         console.table(currentList);
     })
+    
 
     filterButton.addEventListener('click', (event) => {
         console.log('clicked FilterButton');
@@ -92,6 +132,12 @@ async function mainEvent() {
         const newList = filterList(currentList, event.target.value);
         console.log(newList);
         injectHTML(newList);
+    })
+
+    generatePieButton.addEventListener('click', (event) => {
+        console.log('generate new pie');
+        const genderCounts = countGenders(currentList);
+        drawGenderPieChart(genderCounts);
     })
 }
 

@@ -28,21 +28,24 @@
                 </div>
                     <button type="button" id="filter" id="filter">Search Data</button>
                     <button type="button" id="generate">Generate List</button>
-                <div class="pie">
-                    <h2>Percentages of Westerosian By Gender</h2>
+                    <div class="box">
+                        <h2>Character List</h2>
+                        <ul id="alias_list"></ul>
+                    </div>
+                    <div class="box">
+                        <ul id="westerosian_info"></ul>
+                    </div>
             
-                                        
-                </div>
             </form>
         </div>
         <div class="right_section box">
-            <h2>Character List</h2>
-            <div class="box">
-                <ul id="alias_list"></ul>
+            <h2>Percentages of Westerosians By Gender</h2>
+            <button type="button" id="genPie">Generate Pie Chart</button>
+            <div class="pie">
+                <canvas id="genderPieChart"></canvas>
+                                    
             </div>
-            <div class="box">
-                <ul id="westerosian_info"></ul>
-            </div>
+            
             <!-- <div class="lds-ellipsis" id='data_load_animation'><div></div><div></div><div></div><div></div></div> -->
         </div>
     </div>
