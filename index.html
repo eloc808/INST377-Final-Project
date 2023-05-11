@@ -6,12 +6,10 @@
     <title>Erika Loc's Final Project</title>
 
     <link rel="stylesheet" href="style.css">
-    <!-- <script src="https://code.highcharts.com/highcharts.js"></script> -->
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
-<body background="throne.png">
+<body background="images/throne.png">
     <header class="header">
         <h1>Game Of Thrones Stats</h1>
         <a href="about.html">
@@ -23,10 +21,8 @@
         <div class="left_section box">
             <form action="https://www.anapioficeandfire.com/api/characters" class="box main_form">
                 <button type="button" id="data_load">Load Data</button>
-                <!-- <button type="button" id="data_clear">Clear GoT Data</button> -->
                 <div>
                     <h2>Search for a Westerosian</h2>
-                    <!-- <label for="westerosian"Filter></label> -->
                     <input type="text" id="westerosian" name="westerosian"/>
                 </div>
                     <button type="button" id="filter" id="filter">Search for Character</button>
@@ -45,11 +41,8 @@
             <h2>Percentages of Westerosians By Gender</h2>
             <button type="button" id="genPie">Generate Pie Chart</button>
             <div class="pie">
-                <canvas id="genderPieChart"></canvas>
-                                    
+                <canvas id="genderPieChart"></canvas>                 
             </div>
-            
-            <!-- <div class="lds-ellipsis" id='data_load_animation'><div></div><div></div><div></div><div></div></div> -->
         </div>
     <script src="./script.js"></script>
 </body>

@@ -8,8 +8,6 @@
     min-width: 300px;
     overflow-x: hidden;
     overflow-y: scroll;
-  
-    /* these are specific to different browsers */
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -79,8 +77,8 @@
   .header h1 {
     display: block;
   
-    background-color: #E0E1DD;
-    color: #0D1B2A;
+    background-color: #153243;
+    color: #EEF0EB;
   
     border: 2px;
     border-radius: 6px;
@@ -118,6 +116,15 @@
     display: flex;
     flex-flow: column;
   }
+
+  /* .pictures {
+    background-color: #153243;
+    border: 2px;
+    border-radius: 4px;
+    height: fit-content;
+    padding: 0.5rem;
+    margin: 0 auto;
+  } */
   
   .footer {
     flex-shrink: 0;
@@ -146,8 +153,8 @@
   
   form input {
       width: 100%;
-      width: -moz-available;          /* WebKit-based browsers will ignore this. */
-      width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+      width: -moz-available;         
+      width: -webkit-fill-available;
       width: fill-available;
   
       margin-bottom: 1rem;
@@ -166,11 +173,7 @@
       margin-bottom: 0.5rem;
     }
   
-  /* How To Write A Media Query For Small Screens */
-  
   @media only screen and (max-width: 736px){
-      /* Rules in here will only apply when a screen is the correct size */
-      /* check it out by using your developer tools to shrink your screen-size */
       .container {
         background-color: #55828B;
         flex-direction: column;

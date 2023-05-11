@@ -25,16 +25,16 @@ function filterList(list, query) {
 
 function cutAliasList(list) {
     console.log('fired cut list');
-    let cloneList = [...list]; // Clone list to avoid mutation
+    let cloneList = [...list];
     const newArray = [];
 
-    for (let i = 0; i < 15; i++) { // We want 15 unique items
+    for (let i = 0; i < 15; i++) {
         if (cloneList.length === 0) {
-            break; // Break if there are not enough items
+            break;
         }
         const index = getRandomIntInclusive(0, cloneList.length -1);
-        newArray.push(cloneList[index]); // Add the selected item to newArray
-        cloneList.splice(index, 1); // Remove selected item from cloneList
+        newArray.push(cloneList[index]);
+        cloneList.splice(index, 1);
     }
 
     return newArray;
@@ -88,18 +88,11 @@ async function mainEvent() {
     const textField = document.querySelector('#westerosian');
     const generatePieButton = document.querySelector('#genPie');
 
-    // generateListButton.getElementsByClassName.display = 'none';
-
     const storedData = localStorage.getItem('storedData');
     const parsedData = JSON.parse(storedData);
     if (parsedData.length > 0) {
         generateListButton.classList.remove("hidden");
     }
-
-    // const loadAnimation = document.querySelector('#data_load_animation');
-    // loadAnimation.style.diplay = 'none';
-    
-    // const textField = document.querySelector('#westerosian')
 
     let currentList = [];
 
@@ -116,7 +109,6 @@ async function mainEvent() {
         console.table(storedList);
     })
     
-
     filterButton.addEventListener('click', (event) => {
         console.log('clicked FilterButton');
 
@@ -131,8 +123,6 @@ async function mainEvent() {
 
     generateListButton.addEventListener('click', (event) => {
         console.log('generate new list');
-        // const recallList = localStorage.getItem('storedData');
-        // const storedList = JSON.parse(recallList);
         currentList = cutAliasList(parsedData);
         console.log(currentList);
         injectHTML(currentList);
@@ -151,7 +141,5 @@ async function mainEvent() {
         drawGenderPieChart(genderCounts);
     })
 }
-
-
 
 document.addEventListener('DOMContentLoaded', async () => mainEvent());
