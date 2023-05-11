@@ -88,7 +88,15 @@ async function mainEvent() {
     const textField = document.querySelector('#westerosian');
     const generatePieButton = document.querySelector('#genPie');
 
-    const loadAnimation = document.querySelector('#data_load_animation');
+    // generateListButton.getElementsByClassName.display = 'none';
+
+    const storedData = localStorage.getItem('storedData');
+    const parsedData = JSON.parse(storedData);
+    if (parsedData.length > 0) {
+        generateListButton.classList.remove("hidden");
+    }
+
+    // const loadAnimation = document.querySelector('#data_load_animation');
     // loadAnimation.style.diplay = 'none';
     
     // const textField = document.querySelector('#westerosian')
@@ -103,8 +111,9 @@ async function mainEvent() {
 
         const results = await fetch('https://www.anapioficeandfire.com/api/characters');
 
-        currentList = await results.json();
-        console.table(currentList);
+        const storedList = await results.json();
+        localStorage.setItem('storedData', JSON.stringify(storedList));
+        console.table(storedList);
     })
     
 
@@ -116,15 +125,17 @@ async function mainEvent() {
 
         console.log(formProps);
         const newList = filterList(currentList, formProps.westerosian);
-        injectHTML(currentList);
+        injectHTML(newList);
         console.log(newList);
     })
 
     generateListButton.addEventListener('click', (event) => {
         console.log('generate new list');
-        const aliasList = cutAliasList(currentList);
-        console.log(aliasList);
-        injectHTML(aliasList);
+        // const recallList = localStorage.getItem('storedData');
+        // const storedList = JSON.parse(recallList);
+        currentList = cutAliasList(parsedData);
+        console.log(currentList);
+        injectHTML(currentList);
     })
 
     textField.addEventListener('input', (event) => {
@@ -144,4 +155,3 @@ async function mainEvent() {
 
 
 document.addEventListener('DOMContentLoaded', async () => mainEvent());
-// olo

@@ -11,23 +11,26 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
-<body>
+<body background="throne.png">
     <header class="header">
         <h1>Game Of Thrones Stats</h1>
+        <a href="about.html">
+            <button class="block"><b>About/Help</b></button>
+        </a>
     </header>
     <div class="container">
         
         <div class="left_section box">
             <form action="https://www.anapioficeandfire.com/api/characters" class="box main_form">
-                <button type="button" id="data_load">Load GoT Data</button>
+                <button type="button" id="data_load">Load Data</button>
                 <!-- <button type="button" id="data_clear">Clear GoT Data</button> -->
                 <div>
                     <h2>Search for a Westerosian</h2>
                     <!-- <label for="westerosian"Filter></label> -->
                     <input type="text" id="westerosian" name="westerosian"/>
                 </div>
-                    <button type="button" id="filter" id="filter">Search Data</button>
-                    <button type="button" id="generate">Generate List</button>
+                    <button type="button" id="filter" id="filter">Search for Character</button>
+                    <button type="button" id="generate">Show all Characters</button>
                     <div class="box">
                         <h2>Character List</h2>
                         <ul id="alias_list"></ul>
@@ -48,16 +51,6 @@
             
             <!-- <div class="lds-ellipsis" id='data_load_animation'><div></div><div></div><div></div><div></div></div> -->
         </div>
-    </div>
-        <footer class="footer">
-            <!-- change page button -->
-            <a href="about.html">
-                <button class="block"><b>About/Help</b></button>
-            </a>
-            <!-- change page button end -->
-        </footer>
-    </div>
     <script src="./script.js"></script>
 </body>
 </html>
-<!-- olo -->
