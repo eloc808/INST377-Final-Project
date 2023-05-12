@@ -1,0 +1,246 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html {
+    background-color: #fff;
+    font-size: 16px;
+    min-width: 300px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  
+    font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’, ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: #EEF0EB;
+  }
+  
+  
+  a {
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  h1 {
+    margin:0;
+    padding:0;
+    padding-bottom:1.5rem;
+    color:#0D1B2A
+  }
+  
+  h2, h4 {
+    margin:0;
+    padding:0;
+    padding-bottom:1.5rem;
+    color:#1B263B
+  }
+  
+  form {
+    accent-color: #F4F9E9;
+  }
+  
+  .wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    flex: 1 2 auto;
+  }
+  
+  .container {
+    margin: 0 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+    flex-direction: row;
+    flex: 1 2 auto;
+  }
+  
+  .header {
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .header h1 {
+    display: block;
+  
+    background-color: #153243;
+    color: #EEF0EB;
+  
+    border: 2px;
+    border-radius: 6px;
+    font-size: 1.5rem;
+    padding: 1.25rem;
+    margin:0; 
+
+    box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+  }
+  
+  
+
+  .box {
+    background-color: #E0E1DD;
+    border: 2px;
+    border-radius: 4px;
+    height: fit-content;
+    padding: 0.5rem;
+    margin: 0 auto;
+  }
+  
+  .left_section {
+    background-color: #E0E1DD;
+    flex: 0 1 auto;
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .right_section {
+    background-color: #E0E1DD;
+    flex: 1 2 auto;
+    margin: 1rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-flow: column;
+  }
+
+  /* .pictures {
+    background-color: #153243;
+    border: 2px;
+    border-radius: 4px;
+    height: fit-content;
+    padding: 0.5rem;
+    margin: 0 auto;
+  } */
+  
+  .footer {
+    flex-shrink: 0;
+    padding: 1rem;
+    background-color: #E0E1DD;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: 2px;
+  }
+
+  .subtitle {
+    color: #0D1B2A;
+    margin: 0px;
+    margin-bottom: 5px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .visible {
+    display: block;
+  }
+  
+  
+  
+  form input {
+      width: 100%;
+      width: -moz-available;         
+      width: -webkit-fill-available;
+      width: fill-available;
+  
+      margin-bottom: 1rem;
+      height: 2rem;
+      border-radius: 4px;
+    }
+  
+    form label {
+      width: 100%;
+      width: -moz-available;          
+      width: -webkit-fill-available;  
+      width: fill-available;
+      align-items: flex-start;
+  
+      display: block; 
+      margin-bottom: 0.5rem;
+    }
+  
+  @media only screen and (max-width: 736px){
+      .container {
+        background-color: #55828B;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch; 
+      }
+  }
+  
+  .button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .lds-ellipsis {
+      display: inline-block;
+      position: relative;
+      width: 80px;
+      height: 80px;
+    }
+    .lds-ellipsis div {
+      position: absolute;
+      top: 33px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: #fff;
+      animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    }
+    .lds-ellipsis div:nth-child(1) {
+      left: 8px;
+      animation: lds-ellipsis1 0.6s infinite;
+    }
+    .lds-ellipsis div:nth-child(2) {
+      left: 8px;
+      animation: lds-ellipsis2 0.6s infinite;
+    }
+    .lds-ellipsis div:nth-child(3) {
+      left: 32px;
+      animation: lds-ellipsis2 0.6s infinite;
+    }
+    .lds-ellipsis div:nth-child(4) {
+      left: 56px;
+      animation: lds-ellipsis3 0.6s infinite;
+    }
+    @keyframes lds-ellipsis1 {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    @keyframes lds-ellipsis3 {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0);
+      }
+    }
+    @keyframes lds-ellipsis2 {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(24px, 0);
+      }
+    }
+    

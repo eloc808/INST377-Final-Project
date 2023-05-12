@@ -1,0 +1,49 @@
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erika Loc's Final Project</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body background="images/throne.png">
+    <header class="header">
+        <h1>Game Of Thrones Stats</h1>
+        <a href="about.html">
+            <button class="block"><b>About/Help</b></button>
+        </a>
+    </header>
+    <div class="container">
+        
+        <div class="left_section box">
+            <form action="https://www.anapioficeandfire.com/api/characters" class="box main_form">
+                <button type="button" id="data_load">Load Data</button>
+                <div>
+                    <h2>Search for a Westerosian</h2>
+                    <input type="text" id="westerosian" name="westerosian"/>
+                </div>
+                    <button type="button" id="filter" id="filter">Search for Character</button>
+                    <button type="button" id="generate">Show all Characters</button>
+                    <div class="box">
+                        <h2>Character List</h2>
+                        <ul id="alias_list"></ul>
+                    </div>
+                    <div class="box">
+                        <ul id="westerosian_info"></ul>
+                    </div>
+            
+            </form>
+        </div>
+        <div class="right_section box">
+            <h2>Percentages of Westerosians By Gender</h2>
+            <button type="button" id="genPie">Generate Pie Chart</button>
+            <div class="pie">
+                <canvas id="genderPieChart"></canvas>                 
+            </div>
+        </div>
+    <script src="./script.js"></script>
+</body>
+</html>
